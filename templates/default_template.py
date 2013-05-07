@@ -1,44 +1,32 @@
 import time
 import datetime
 
-SITE_NAME = "martignilas"
-AUTHOR = "lucapost"
-SRC = "/home/lucapost/repo/martignilas.it/src_"
+SITE_NAME = "Casa Colori a Roma"
+DESC = "Appartamento in affito vicino alla Stazione Termini"
+SRC = "/home/lucapost/repo/romecolorhouse.it/src"
 DST = "./"
-SITEMAP = "sitemap_orig.xml"
-URL = "http://martignilas.it"
+SITEMAP = "sitemap.xml"
+URL = "http://romecolorhouse"
 PREFIX = "/"
 HOME = "home"
 PATH_SEPARATOR = '/'
-SRC_EXT = {"markdown": "md", "textile": "tt"}
+SRC_EXT = {"markdown": "md", "textile": "tt", "plain": "txt"}
 DST_EXT = "html"
-HIDDEN = set(["404.md", "privacy.md"])
+HIDDEN = set(["404.md"])
 menu_code = ''
-PAGES = {
-         SRC + "it/01_index.md": ("casa", "sito internet della casa vacanze Martignilas"),
-	 SRC + "it/10_alloggi.md": ("alloggi", "descrizione della casa"),
-	 SRC + "it/20_informazioni.md": ("info", "eventi e cose da visitare"),
-	 SRC + "it/30_contatti.md": ("contatti", "comunicare con il propietario"),
-         SRC + "en/01_index.md": ("home", "Martignilas holidays home website"),
-	 SRC + "en/10_accomodation.md": ("accomodation", "description of building and offers"),
-	 SRC + "en/20_informations.md": ("info", "some informations about restaurant and museum"),
-	 SRC + "en/30_contacts.md": ("contacts", "how you can contacs with we"),
-         SRC + "de/01_index.md": ("haus", "Martignilas"),
-	 SRC + "de/10_unterkunft.md": ("unterkunft", "descrizione della casa"),
-	 SRC + "de/20_informationen.md": ("info", "eventi e cose da visitare"),
-	 SRC + "de/30_kontacte.md": ("kontacte", "comunicare con il propietario")
-}
+PAGES = {SRC + "/index.md": ("casa colori a roma", "indice", "affitto appartamento in Stazione Termini"),
+	 SRC + "/en.md": ("rete", "aa", "esempi di configurazione dei nodi della rete"),
+	 SRC + "/es.md": ("links", "bb", "collegamenti a siti amici")}
 
 current_time = datetime.datetime.now()
 
 def get_page_contents(node):
     """Return page title and description from the global variable pages if a
     match with current node page.src_file is found.
-    """  
+    """ 
+
     try:
-        return (SITE_NAME + ' | ' + PAGES[node.page.src_pathname][0], \
-            PAGES[node.page.src_pathname][1],
-            PAGES[node.page.src_pathname][0])
+        return (PAGES[node.page.src_pathname][0], PAGES[node.page.src_pathname][1],  PAGES[node.page.src_pathname][2])
     except KeyError:
         return ('%%%TITLE%%%', '', '')
 
@@ -57,74 +45,38 @@ def menu(node):
 def menu_(node, cur_node, node_prefix = PREFIX, indent = ''):
     """Auxiliary recursive function for menu generation."""
 
-    if node.page.dst_pathname == '/home/lucapost/repo/martignilas.it/de':
-      node_prefix = '/de/'
-
-    if node.page.dst_pathname == '/home/lucapost/repo/martignilas.it/en':
-      node_prefix = '/en/'
-
     global menu_code
 
     menu_code += indent + '<ul>\n'
     for child in sorted(node.children, key=lambda n: n.page.src_pathname):
-	(title, description, linkname) = get_page_contents(child)
-        if child.page.src_file in HIDDEN:
+        if child.page.dst_file.startswith("index.") or child.page.src_file in HIDDEN:
             continue
-        menu_code += indent + '<li class="level-' + str(child.page.level)
+        menu_code += indent + '<li class="level-' + str(child.page.level) + '"><a '
         if(child == cur_node
         or (cur_node.page.dst_file.startswith("index.") and child == cur_node.parent)):
-            menu_code += ' current'
-        menu_code += '"><a href="' + node_prefix + child.page.dst_file
+            menu_code += 'class="current" '
+        menu_code += 'href="' + node_prefix + child.page.dst_file
         if child.children:
-            menu_code += "/index." + DST_EXT + '">' + linkname + '</a>\n'
+            menu_code += "/index." + DST_EXT + '">'    + child.page.name + '</a>\n'
             menu_(child, cur_node, node_prefix + child.page.dst_file + '/', indent + '\t')
             menu_code += indent + '</li>\n'
-	else:
-	    menu_code += '">'   + linkname + '</a></li>\n'
+        else:
+            menu_code += '">'   + child.page.name + '</a></li>\n'
     menu_code += indent + '</ul>\n'
 
 def header(node):
     """Build the header and return it to a string."""
 
-    (title, description, linkname) = get_page_contents(node)
- 
-    flagit = ''
-    flagde = ''
-    flagen = ''
-    lang = 'it'
-    imagebg = ''
-
-    if DST == '/home/lucapost/repo/martignilas.it/de':
-      desc = 'Ferienhaus in Val Resia'
-      flagde = ' active'
-      lang = 'de'
-    elif DST == '/home/lucapost/repo/martignilas.it/en':
-      desc = 'Holidays house in Val Resia'
-      flagen = ' active'
-      lang = 'en'
-    else:
-      desc = 'Casa vacanze in Val Resia'
-      flagit = ' active'
-      lang = 'it'
-
-    if linkname == 'casa' or linkname == 'haus' or linkname == 'home':
-	imagebg = ' casa'
-    if linkname == 'alloggi' or linkname == 'unterkunft' or linkname == 'accomodation':
-	imagebg = ' alloggi'
-    if linkname == 'info':
-	imagebg = ' info'
-    if linkname == 'contatti' or linkname == 'kontacte' or linkname == 'contacts':
-	imagebg = ' contatti'
-
+    (title, linkname, description) = get_page_contents(node)
     return '''<!DOCTYPE html>
-	<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="''' + lang + '''"> <![endif]-->
-	<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="''' + lang + '''"> <![endif]-->
-	<!--[if IE 8]>    <html class="no-js lt-ie9" lang="'''+ lang + '''"> <![endif]-->
-	<!--[if gt IE 8]><!--> <html class="no-js" lang="''' + lang + '''"> <!--<![endif]-->
+	<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="it"> <![endif]-->
+	<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="it"> <![endif]-->
+	<!--[if IE 8]>    <html class="no-js lt-ie9" lang="it"> <![endif]-->
+	<!--[if gt IE 8]><!--> <html class="no-js" lang="it"> <!--<![endif]-->
 	<head>
         	<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        	<meta name="author" content="''' + AUTHOR + '''" />
+<!--		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
+        	<meta name="author" content="lucapost" />
 	        <meta name="description" content="''' + description + '''" />
         	<title>''' + title + '''</title>
   		<meta name="viewport" content="width=device-width">
@@ -133,110 +85,95 @@ def header(node):
 		<link rel="stylesheet" type="text/css" media="all" href="/css/960.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="/css/hashgrid.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
-  		<script src="/js/modernizr.js"></script>
+  		<script src="/js/modernizr.js"></script> 
+
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(function(){
+				if(!flux.browser.supportsTransitions)
+					alert("Flux Slider requires a browser that supports CSS3 transitions");
+					
+				window.f = new flux.slider('#slider', {
+					pagination: true
+				});
+			});
+		</script> 
+
 	</head>
 	<body id="top">
-		<div class="container_24">
-			<header class="push_3 grid_18">
-					<div class="grid_1 alpha">&nbsp;</div>
-					<a href="/" title="home page">
-						<hgroup class="grid_8">
-							<h1>''' + SITE_NAME + '''</h1>
-							<h2>''' + desc + '''</h2>
-						</hgroup>
-					</a>
-					<nav class="grid_4 suffix_1">
-						''' + menu(node) + '''
-					</nav>
-					<figure class="flag">
-						<a href="/" title="italiano">
-							<img src="/images/flag_ita.png" alt="lingua italiana" class="grid_1''' + flagit + '''">
-						</a>
-						<a href="/en" title="english">
-							<img src="/images/flag_eng.png" alt="english language" class="grid_1''' + flagen + '''">
-						</a>
-						<a href="/de" title="deutsch">
-							<img src="/images/flag_deu.png" alt="deutch" class="grid_1''' + flagde + '''">
-						</a>
+		<header>
+			<div class="container_12 clearfix">
+				<hgroup class="grid_6">
+					<h1>''' + title + '''</h1>
+					<h2>''' + description + '''</h2>
+				</hgroup>
+				<figure class="grid_6">
+					flags
+				</figure>
+				<div class="clear"></div>
+			</div>
+		</header>
+		<figure class="bar">
+			<div class="container_12 clearfix">
+				<div id="images" class="grid_6">
+					<div id="slider">
+						<img src="/images/0_entrata1.jpg" title="entrata" alt="entrata" class="slid"/>
+						<img src="/images/0_entrata2.jpg" title="entrata" alt="entrata" class="slid"/>
+						<img src="/images/0_entrata3.jpg" title="entrata" alt="entrata" class="slid"/>
+					</div>
+<!--					<div id="controls">
+                				<a href="#" id="start" title="play">Play</a>
+                				<a href="#" id="stop" title="stop">Stop</a> 
+                				<a href="#" id="next" title="next">Next</a> 
+                				<a href="#" id="prev" title="previous">Prev</a>
+					</div> -->
+				</div>
+				<div class="grid_6">
+					<figure class="maps">
+						<iframe width="460" height="460" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?hl=it&amp;q=Via+Cairoli,+Rome,+Lazio+00185,+Italy&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Cairoli,+Roma,+Lazio&amp;t=m&amp;ll=41.893908,12.50742&amp;spn=0.02939,0.039396&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
 					</figure>
-					<div class="grid_1 omega">&nbsp;</div>
-			</header>
-			<div class="clear"></div>
-		</div>		
-		<div class="container_24">
-			<section class="push_3 grid_18">
-				<div class="grid_1 alpha">&nbsp;</div>
-				<article class="grid_10'''+ imagebg +'''">
-'''
+				</div>
+			</div>
+		</figure>
+
+			'''
 def footer(node):
     """Build the footer and return it to a string."""
 
-    (title, description, linkname) = get_page_contents(node)
-
-    html = '''\n</article>'''
-    if linkname == 'casa' or linkname == 'haus' or linkname == 'home':
-	html += '''<figure class="grid_6"><img alt="ingresso della casa" src="/images/pages/casa_fronte.jpg" title="casa martignilas" class="casa"/></figure>'''
-    elif linkname == 'alloggi' or linkname == 'unterkunft' or linkname == 'accomodation':
-	html += '''<nav class="grid_3 gallery">
-    <ul>
-      <li><a href="#pic0"><img src="/images/pages/pic00.jpg" alt=""></a></li>
-      <li><a href="#pic1"><img src="/images/pages/pic01.jpg" alt=""></a></li>
-      <li><a href="#pic2"><img src="/images/pages/pic02.jpg" alt=""></a></li>
-      <li><a href="#pic3"><img src="/images/pages/pic03.jpg" alt=""></a></li>
-      <li><a href="#pic4"><img src="/images/pages/pic04.jpg" alt=""></a></li>
-    </ul>
-	</nav>
-	<nav class="grid_3 gallery">
-    <ul>
-      <li><a href="#pic5"><img src="/images/pages/pic05.jpg" alt=""></a></li>
-      <li><a href="#pic6"><img src="/images/pages/pic06.jpg" alt=""></a></li>
-      <li><a href="#pic7"><img src="/images/pages/pic07.jpg" alt=""></a></li>
-      <li><a href="#pic8"><img src="/images/pages/pic08.jpg" alt=""></a></li>
-      <li><a href="#pic9"><img src="/images/pages/pic09.jpg" alt=""></a></li>
-    </ul>
-</nav>
-<figure>
-<ul>
-      <li id="pic0"><a href="#home"><img src="/images/pages/pic00.jpg" alt=""></a></li>
-      <li id="pic1"><a href="#home"><img src="/images/pages/pic01.jpg" alt=""></a></li>
-      <li id="pic2"><a href="#home"><img src="/images/pages/pic02.jpg" alt=""></a></li>
-      <li id="pic3"><a href="#home"><img src="/images/pages/pic03.jpg" alt=""></a></li>
-      <li id="pic4"><a href="#home"><img src="/images/pages/pic04.jpg" alt=""></a></li>
-      <li id="pic5"><a href="#home"><img src="/images/pages/pic05.jpg" alt=""></a></li>
-      <li id="pic6"><a href="#home"><img src="/images/pages/pic06.jpg" alt=""></a></li>
-      <li id="pic7"><a href="#home"><img src="/images/pages/pic07.jpg" alt=""></a></li>
-      <li id="pic8"><a href="#home"><img src="/images/pages/pic08.jpg" alt=""></a></li>
-      <li id="pic9"><a href="#home"><img src="/images/pages/pic09.jpg" alt=""></a></li>
-</ul>
-</figure>'''
-    elif linkname == 'info':
-	html += '''<figure class="grid_6"><img class="logo" src="/images/pages/logo_resia.jpg" alt="logo del comune di resia"/><img class="logo" src="/images/pages/logo_parco.jpg" alt="logo del comune di resia"/></figure>'''
-    elif linkname == 'contatti' or linkname == 'kontacte' or linkname == 'contacts':
-	html += '''<figure class="grid_6"><iframe width="230px" height="230px" src="https://maps.google.it/maps?q=Resia+UD&amp;hl=it&amp;ie=UTF8&amp;view=map&amp;ftid=0x477a3e21c3cfb9bd:0x8f976dec79701aef&amp;ftt=37&amp;geocode=FR5WwwIdmtvKAA&amp;split=0&amp;sll=46.355998,13.294490&amp;sspn=0.000000,0.000000&amp;hq=&amp;hnear=Resia,+Udine,+Friuli-Venezia+Giulia&amp;ll=46.355998,13.29449&amp;spn=0.015403,0.032015&amp;t=h&amp;output=embed"></iframe></figure>'''
-    html += '''<div class="grid_1 omega">&nbsp;</div>
-			</section>
-			<div class="clear"></div>
-		</div>
-		<div class="container_24">
-			<div class="push_3 grid_18">
-				<footer class="prefix_1 grid_16 suffix_1 alpha omega">
-				<p>&copy; ''' + str(current_time.year) + ''' <a href="http://luca.postregna.name" title="lucapost blog">lucapost</a> | <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">license</a> | <a href="/privacy.html">privacy</a> | edit: ''' + time.strftime("%Y%m%d %I:%M:%S %p", node.page.last_edit) + '''</p>
-				</footer>
+    return '''
+		<footer class="container_12 clearfix">
+			<div class="grid_12">
+				<a href="#top" title="back to top" class="backtotop">back to top</a>
+				<div class="foot">
+					<p>&copy; ''' + str(current_time.year) + ''' <a href="http://iulii.net" title="iulii.net website">iulii.net</a> | <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">license CC by-nc</a> | edit: ''' + time.strftime("%Y%m%d %I:%M:%S %p", node.page.last_edit) + '''</p>
+				</div>
 			</div>
 			<div class="clear"></div>
-		</div>	
-	  	<script src="/js/jquery.js"></script> 
-  		<script src="/js/hashgrid.js"></script>
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-6164762-13']);
-  			_gaq.push(['_trackPageview']);
-  			(function() {
-    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  			})();
-		</script>	
-	</body>
-</html>'''
-    return html	
+		</footer>	
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+	  	<script src="'''+ PREFIX +'''js/jquery.js"></script> 
+  		<script src="'''+ PREFIX +'''js/plugins.js"></script>
+  		<script src="'''+ PREFIX +'''js/main.js"></script>
+  		<script src="'''+ PREFIX +'''js/hashgrid.js"></script>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		  }(document, 'script', 'facebook-jssdk'));
+		</script>
+		<script>
+			!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  		<script>
+    			var _gaq=[['_setAccount','UA-6164762-12'],['_trackPageview']];
+    			(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    			g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    			s.parentNode.insertBefore(g,s)}(document,'script'));
+  		</script>
+</body>
+</html>'''	
