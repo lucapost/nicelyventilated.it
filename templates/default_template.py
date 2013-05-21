@@ -74,11 +74,12 @@ def header(node):
 	<!--[if IE 8]>    <html class="no-js lt-ie9" lang="it"> <![endif]-->
 	<!--[if gt IE 8]><!--> <html class="no-js" lang="it"> <!--<![endif]-->
 	<head>
-        	<meta charset="utf-8" />
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+       	<meta charset="utf-8" />
 <!--		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
-        	<meta name="author" content="lucapost" />
-	        <meta name="description" content="''' + description + '''" />
-        	<title>''' + title + ''' | ''' + linkname + '''</title>
+       	<meta name="author" content="lucapost" />
+	    <meta name="description" content="''' + description + '''" />
+       	<title>''' + title + ''' | ''' + linkname + '''</title>
   		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" type="text/css" media="all" href="/css/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="/css/text.css" />
@@ -105,36 +106,31 @@ def header(node):
 	</head>
 	<body id="top">
 		<header>
-			<div class="container_12 clearfix">
-				<hgroup class="grid_6">
-					<h1>''' + title + '''</h1>
-					<h2>''' + description + '''</h2>
+			<div class="container_24 clearfix">
+				<hgroup class="grid_8">
+					<h1>nicely ventilated</h1>
+					<h2>appartamento a Roma centro, a due passi da Stazione Termini</h2>
+                    <h3>email: <a href="mailto:pdilena@libero.it" alt="contatto email">pdilena@libero.it</a></h3>
+                    <h3>phone: +39 1234567890</h3>
+                    <figure>
+						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 prefix_1 alpha"/>
+						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2"/>
+						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 suffix_1 omega"/>
+                    </figure>
 				</hgroup>
-				<figure class="grid_6">
-					flags
+				<figure class="grid_16">
+					<div id="slider">
+						<img src="/images/0_entrata1.jpg" title="entrata" alt="entrata" class="slid"/>
+						<img src="/images/0_entrata2.jpg" title="entrata" alt="entrata" class="slid"/>
+						<img src="/images/0_entrata1.jpg" title="entrata" alt="entrata" class="slid"/>
+						<img src="/images/0_entrata2.jpg" title="entrata" alt="entrata" class="slid"/>
+					</div>
 				</figure>
 				<div class="clear"></div>
 			</div>
 		</header>
-		<figure class="bar">
-			<div class="container_12 clearfix">
-				<div id="images" class="grid_6">
-					<div id="slider">
-						<img src="/images/0_entrata1.jpg" title="entrata" alt="entrata" class="slid"/>
-						<img src="/images/0_entrata2.jpg" title="entrata" alt="entrata" class="slid"/>
-						<img src="/images/0_entrata3.jpg" title="entrata" alt="entrata" class="slid"/>
-					</div>
-				</div>
-				<div class="grid_6">
-					<figure class="maps">
-						<iframe width="458" height="458" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?hl=it&amp;q=Via+Cairoli,+Rome,+Lazio+00185,+Italy&amp;ie=UTF8&amp;hq=&amp;hnear=Via+Cairoli,+Roma,+Lazio&amp;t=m&amp;ll=41.893908,12.50742&amp;spn=0.02939,0.039396&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
-					</figure>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</figure>
 		<section>
-			<div class="container_12 clearfix content">
+			<div class="container_24 clearfix content">
 			'''
 def footer(node):
     """Build the footer and return it to a string."""
@@ -144,8 +140,8 @@ def footer(node):
 			</div>
 		</section>
 		<footer>
-			<div class="container_12 clearfix">
-				<div class="grid_12">
+			<div class="container_24 clearfix">
+				<div class="grid_24">
 					<p>&copy <a href="http://luca.postregna.name">lucapost</a> ''' + str(current_time.year) + '''; <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">license CC by-nc</a>; edit: ''' + time.strftime("%Y%m%d %I:%M:%S %p", node.page.last_edit) + '''</p>
 				</div>
 			</div>
