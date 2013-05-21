@@ -11,7 +11,6 @@
 }
 
 header {
-    background-color: red;
     height: 340px;
 }
 
@@ -23,8 +22,8 @@ hgroup {
 }
 
 h1 {
-    margin: 20px 40px 0 40px;
-    font-size: 36px;
+    margin: 20px 40px 0 0px;
+    font-size: 40px;
     line-height: 40px;
 /*	font-family: 'Fanwood Text', 'Gotham', Helvetica, Verdana, sans-serif;*/
     font-family: 'Gotham', Helvetica, Verdana, sans-serif;
@@ -32,19 +31,19 @@ h1 {
 }
 
 h2 {
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 20px;
 	font-family: 'Gotham', Helvetica, Verdana, sans-serif;
 	text-transform: uppercase;
-	margin: 20px 40px 20px 40px;
+	margin: 20px 40px 20px 0px;
 }
 
 h3 {
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 20px;
 	font-family: 'Gotham', Helvetica, Verdana, sans-serif;
 	text-transform: uppercase;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 40px 0px 0px;
 }
 
 h4 {
@@ -53,6 +52,10 @@ h4 {
 	font-family: 'Gotham', Helvetica, Verdana, sans-serif;
 	text-transform: uppercase;
     margin: 0px 0px 20px 0px;
+}
+
+section {
+	background-color: lightgrey;
 }
 
 hgroup figure {
@@ -115,5 +118,4 @@ img.flag {
 footer {
 	padding: 20px 0 0 0;
 	text-align: center;
-	background-color: red;
 }

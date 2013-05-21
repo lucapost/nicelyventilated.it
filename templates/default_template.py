@@ -113,9 +113,9 @@ def header(node):
                     <h3>email: <a href="mailto:pdilena@libero.it" alt="contatto email">pdilena@libero.it</a></h3>
                     <h3>phone: +39 1234567890</h3>
                     <figure>
-						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 prefix_1 alpha"/>
+						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_1"/>
 						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2"/>
-						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 suffix_1 omega"/>
+						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 omega"/>
                     </figure>
 				</hgroup>
 				<figure class="grid_16">
