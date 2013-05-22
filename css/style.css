@@ -47,7 +47,7 @@ h3 {
 }
 
 h4 {
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 20px;
 	font-family: 'Gotham', Helvetica, Verdana, sans-serif;
 	text-transform: uppercase;
@@ -112,7 +112,11 @@ img.flag {
 }
 
 .content {
-	background: url('/images/colosseo.png') no-repeat 330px 60px;
+	background: url('/images/colosseo.png') no-repeat 0px 60px;
+}
+
+iframe {
+    margin-bottom: 25px;
 }
 
 footer {

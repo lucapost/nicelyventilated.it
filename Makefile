@@ -1,5 +1,6 @@
 generate: 
-	./minimalsite.py -t templates/default_template.py -s src -d .
+	./minimalsite.py -t templates/it_template.py -s src -d .
+#	./minimalsite.py -t templates/default_template.py -s src -d .
 
 update:
 	make

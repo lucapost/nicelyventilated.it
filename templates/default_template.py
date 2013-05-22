@@ -2,32 +2,15 @@ import time
 import datetime
 
 SITE_NAME = " "
-SRC = "/home/lucapost/repo/romecolorhouse.it/src"
-DST = "./"
 SITEMAP = "sitemap.xml"
 URL = "http://romecolorhouse"
-PREFIX = "/"
 HOME = "home"
 PATH_SEPARATOR = '/'
 SRC_EXT = {"markdown": "md", "textile": "tt", "plain": "txt"}
 DST_EXT = "html"
 HIDDEN = set(["404.md"])
-menu_code = ''
-PAGES = {SRC + "/index.tt": ("color house a roma", "indice", "appartamento in affitto vicino Stazione Termini"),
-	 SRC + "/en.md": ("rete", "aa", "esempi di configurazione dei nodi della rete"),
-	 SRC + "/es.md": ("links", "bb", "collegamenti a siti amici")}
 
 current_time = datetime.datetime.now()
-
-def get_page_contents(node):
-    """Return page title and description from the global variable pages if a
-    match with current node page.src_file is found.
-    """ 
-
-    try:
-        return ( PAGES[node.page.src_pathname][0] , PAGES[node.page.src_pathname][1],  PAGES[node.page.src_pathname][2])
-    except KeyError:
-        return ('%%%TITLE%%%', '', '')
 
 def menu(node):
     """Generate a hierarchical menu."""
@@ -66,8 +49,6 @@ def menu_(node, cur_node, node_prefix = PREFIX, indent = ''):
 def header(node):
     """Build the header and return it to a string."""
 
-    (title, linkname, description) = get_page_contents(node)
-
     return '''<!DOCTYPE html>
 	<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="it"> <![endif]-->
 	<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="it"> <![endif]-->
@@ -78,8 +59,8 @@ def header(node):
        	<meta charset="utf-8" />
 <!--		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
        	<meta name="author" content="lucapost" />
-	    <meta name="description" content="''' + description + '''" />
-       	<title>''' + title + ''' | ''' + linkname + '''</title>
+	    <meta name="description" content="''' + DESC + '''" />
+       	<title>''' + TITLE + ''' | ''' + DESC + '''</title>
   		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" type="text/css" media="all" href="/css/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="/css/text.css" />
@@ -104,7 +85,7 @@ def header(node):
 			});
 		</script> 
 	</head>
-	<body id="top">
+	<body>
 		<header>
 			<div class="container_24 clearfix">
 				<hgroup class="grid_8">
@@ -113,9 +94,9 @@ def header(node):
                     <h3>email: <a href="mailto:pdilena@libero.it" alt="contatto email">pdilena@libero.it</a></h3>
                     <h3>phone: +39 1234567890</h3>
                     <figure>
-						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_1"/>
-						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2"/>
-						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 omega"/>
+						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_1''' + ITA + '''"/>
+						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2''' + ENG + '''"/>
+						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 omega''' + DEU + '''"/>
                     </figure>
 				</hgroup>
 				<figure class="grid_16">
