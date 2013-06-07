@@ -104,8 +104,6 @@ def header(node):
 						<img src="/images/slider/01.jpg" title="entrata" alt="entrata" class="slid"/>
 						<img src="/images/slider/03.jpg" title="entrata" alt="entrata" class="slid"/>
 						<img src="/images/slider/04.jpg" title="entrata" alt="entrata" class="slid"/>
-						<img src="/images/slider/05.jpg" title="entrata" alt="entrata" class="slid"/>
-						<img src="/images/slider/06.jpg" title="entrata" alt="entrata" class="slid"/>
 						<img src="/images/slider/07.jpg" title="entrata" alt="entrata" class="slid"/>
 						<img src="/images/slider/08.jpg" title="entrata" alt="entrata" class="slid"/>
 					</div>
