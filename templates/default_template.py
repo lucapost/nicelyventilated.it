@@ -90,11 +90,11 @@ def header(node):
 			<div class="container_24 clearfix">
 				<hgroup class="grid_8">
 					<h1>nicely ventilated</h1>
-					<h2>appartamento a Roma centro, a due passi da Stazione Termini</h2>
-                    <h3>email: <a href="mailto:pdilena@libero.it" alt="contatto email">pdilena@libero.it</a></h3>
-                    <h3>phone: +39 1234567890</h3>
+					<h2>Appartamento al centro di Roma nel quartiere Esquilino a due passi dalla stazione Termini</h2>
+<!--                    <h3>email: <a href="mailto:pdilena@libero.it" alt="contatto email">pdilena@libero.it</a></h3>
+                    <h3>phone: +39 1234567890</h3> -->
                     <figure>
-						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_1''' + ITA + '''"/>
+						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_2''' + ITA + '''"/>
 						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2''' + ENG + '''"/>
 						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 omega''' + DEU + '''"/>
                     </figure>

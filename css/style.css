@@ -22,7 +22,7 @@ hgroup {
 }
 
 h1 {
-    margin: 20px 40px 0 0px;
+    margin-top: 40px;
     font-size: 40px;
     line-height: 40px;
 /*	font-family: 'Fanwood Text', 'Gotham', Helvetica, Verdana, sans-serif;*/
@@ -35,7 +35,7 @@ h2 {
 	line-height: 20px;
 	font-family: 'Gotham', Helvetica, Verdana, sans-serif;
 	text-transform: uppercase;
-	margin: 20px 40px 20px 0px;
+	margin: 20px 0px 20px 0px;
 }
 
 h3 {
@@ -43,7 +43,7 @@ h3 {
 	line-height: 20px;
 	font-family: 'Gotham', Helvetica, Verdana, sans-serif;
 	text-transform: uppercase;
-    margin: 0px 40px 0px 0px;
+    margin: 20px 0px 0px 0px;
 }
 
 h4 {
@@ -74,7 +74,7 @@ li {
 }
 
 img.flag {
-    height: 20px;
+    height: 40px;
     width: 70px;
 }
 
@@ -116,7 +116,7 @@ img.flag {
 }
 
 iframe {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 footer {
