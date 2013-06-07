@@ -4,26 +4,40 @@ import datetime
 SITE_NAME = "Color House "
 SITEMAP = "sitemap.xml"
 URL = "http://nicelyventilated.it"
-HOME = "home"
-PATH_SEPARATOR = '/'
+SRC = "/home/lucapost/repo/nicelyventilated.it/src/" + LANG
+DST = "./" + LANG
+PREFIX = "/"
+HOME = "/"
+PATH_SEPARATOR = "/"
 SRC_EXT = {"markdown": "md", "textile": "tt", "plain": "txt"}
 DST_EXT = "html"
 HIDDEN = set(["404.md"])
 
 current_time = datetime.datetime.now()
 
+ITA = ""
+ENG = ""
+DEU = ""
+
+if LANG == "en":
+    ENG = " current"
+elif LANG == "de":
+    DEU = " current"
+else:
+    ITA = " current"
+    DST = "./"
+
 def header(node):
     """Build the header and return it to a string."""
 
     return '''<!DOCTYPE html>
-	<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="it"> <![endif]-->
-	<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="it"> <![endif]-->
-	<!--[if IE 8]>    <html class="no-js lt-ie9" lang="it"> <![endif]-->
-	<!--[if gt IE 8]><!--> <html class="no-js" lang="it"> <!--<![endif]-->
+	<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="''' + LANG + '''"> <![endif]-->
+	<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="''' + LANG + '''"> <![endif]-->
+	<!--[if IE 8]>    <html class="no-js lt-ie9" lang="''' + LANG + '''"> <![endif]-->
+	<!--[if gt IE 8]><!--> <html class="no-js" lang="''' + LANG + '''"> <!--<![endif]-->
 	<head>
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
        	<meta charset="utf-8" />
-<!--		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
        	<meta name="author" content="lucapost" />
 	    <meta name="description" content="''' + DESC + '''" />
        	<title>''' + SITE_NAME + ''' | ''' + DESC + '''</title>
@@ -64,7 +78,7 @@ def header(node):
                     <figure>
 						<a href="/" title="italiano" class="flag grid_2 alpha''' + ITA + '''"><img src="/images/ita.png" title="italiano" alt="bandiera"/></a>
 						<a href="/en" title="english" class="flag grid_2''' + ENG + '''"><img src="/images/eng.png" title="english" alt="flag"/></a>
-						<a href="/de" title="deutch" class="flag grid_2 omega''' + DEU + '''"><img src="/images/deu.png" title="deutch" alt="flagge"/></a>
+						<a href="#" title="deutch" class="flag grid_2 omega''' + DEU + '''"><img src="/images/deu.png" title="deutch" alt="flagge"/></a>
                     </figure> 
 				</hgroup>
 				<figure class="grid_16">
