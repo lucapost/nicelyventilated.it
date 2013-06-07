@@ -1,55 +1,4 @@
-import time
-import datetime
-
-SITE_NAME = " "
-SITEMAP = "sitemap.xml"
-URL = "http://romecolorhouse"
-HOME = "home"
-PATH_SEPARATOR = '/'
-SRC_EXT = {"markdown": "md", "textile": "tt", "plain": "txt"}
-DST_EXT = "html"
-HIDDEN = set(["404.md"])
-
-current_time = datetime.datetime.now()
-
-def menu(node):
-    """Generate a hierarchical menu."""
-
-    global menu_code
-
-    menu_code = '\n'
-    root = node
-    while root.parent:
-        root = root.parent
-    menu_(root, node)
-    return menu_code
-
-def menu_(node, cur_node, node_prefix = PREFIX, indent = ''):
-    """Auxiliary recursive function for menu generation."""
-
-    global menu_code
-
-    menu_code += indent + '<ul>\n'
-    for child in sorted(node.children, key=lambda n: n.page.src_pathname):
-        if child.page.dst_file.startswith("index.") or child.page.src_file in HIDDEN:
-            continue
-        menu_code += indent + '<li class="level-' + str(child.page.level) + '"><a '
-        if(child == cur_node
-        or (cur_node.page.dst_file.startswith("index.") and child == cur_node.parent)):
-            menu_code += 'class="current" '
-        menu_code += 'href="' + node_prefix + child.page.dst_file
-        if child.children:
-            menu_code += "/index." + DST_EXT + '">'    + child.page.name + '</a>\n'
-            menu_(child, cur_node, node_prefix + child.page.dst_file + '/', indent + '\t')
-            menu_code += indent + '</li>\n'
-        else:
-            menu_code += '">'   + child.page.name + '</a></li>\n'
-    menu_code += indent + '</ul>\n'
-
-def header(node):
-    """Build the header and return it to a string."""
-
-    return '''<!DOCTYPE html>
+<!DOCTYPE html>
 	<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="it"> <![endif]-->
 	<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="it"> <![endif]-->
 	<!--[if IE 8]>    <html class="no-js lt-ie9" lang="it"> <![endif]-->
@@ -59,8 +8,8 @@ def header(node):
        	<meta charset="utf-8" />
 <!--		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
        	<meta name="author" content="lucapost" />
-	    <meta name="description" content="''' + DESC + '''" />
-       	<title>''' + TITLE + ''' | ''' + DESC + '''</title>
+	    <meta name="description" content="appartamento in affitto al centro di roma" />
+       	<title>index | appartamento in affitto al centro di roma</title>
   		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" type="text/css" media="all" href="/css/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="/css/text.css" />
@@ -95,9 +44,9 @@ def header(node):
                     <h3>Email: <a href="mailto:pdilena@tin.it" title="email address">pdilena@libero.it</a><br/>
                     Phone: +39 3389456208</h3>
                     <figure>
-						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_2''' + ITA + '''"/>
-						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2''' + ENG + '''"/>
-						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 omega''' + DEU + '''"/>
+						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_2 current"/>
+						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2"/>
+						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 omega"/>
                     </figure> 
 				</hgroup>
 				<figure class="grid_16">
@@ -111,22 +60,79 @@ def header(node):
 		</header>
 		<section>
 			<div class="container_24 clearfix content">
-			'''
-def footer(node):
-    """Build the footer and return it to a string."""
+			<article class="grid_8">
 
-    return '''
+	<h4>La casa</h4>
+
+	<p>Color House è un confortevole e spazioso appartamento di 100mq, situato al centro di Roma nel quartiere Esquilino. </p>
+
+	<p>Recentemente ristrutturato, dispone di ampie stanze con parquet e arredamento moderno. La cucina è ben accessoriata, provvista di lavastoviglie e lavatrice. </p>
+
+	<p>Fornitura completa di biancheria. Ampio bagno con cabina doccia e vasca. </p>
+
+	<p>Sono disponibili due camere da letto (letto matrimoniale e due letti singoli), 1 salone (con letto 1 piazza e mezza).</p>
+
+	<p>Tv, internet wifi.</p>
+
+	<h4>Prezzi</h4>
+
+	<p>Il prezzo previsto è di 100€ a notte fino a due persone, ogni persona € 20 in più, per un soggiorno minimo di due notti. Per soggiorni più lunghi offriamo:</p>
+
+	<ul>
+		<li>500€/settimana;</li>
+		<li>1800€/mese;</li>
+	</ul>
+
+	<p>Spese di pulizia a 40€.</p>
+
+</article><article class="grid_8">
+
+	<h4>Dove siamo</h4>
+
+	<p>Siamo strategicamente posizionati per rendere facile il vostro arrivo e la vostra partenza da Roma. Ci troviamo nel quartiere Esquilino adiacenti a:</p>
+
+	<ul>
+		<li>stazione Termini (aereoporti di Fiumicino e Ciampino);</li>
+		<li>metropolitana linea A;</li>
+		<li>bus per tutte le direzioni;</li>
+	</ul>
+
+	<p>Inoltre: </p>
+
+	<ul>
+		<li>mercato rionale multietnico e supermercato;</li>
+		<li>ristoranti italiani e multietnici;</li>
+		<li>cinema all&#8217;aperto nei mesi di luglio e agosto;</li>
+	</ul>
+
+	<p>a 15 minuti a piedi per: </p>
+
+	<ul>
+		<li>colosseo;</li>
+		<li>foro romano;</li>
+		<li>basilica Santa Maria Maggiore;</li>
+		<li>basilica di San Clemente;</li>
+		<li>basilica papale di San Giovanni Laterano;</li>
+		<li>terme di Caracalla;</li>
+		<li>circo Massimo. </li>
+	</ul>
+
+</article><article class="grid_8">
+
+<iframe width="310" height="320" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=41.89378,12.507323&amp;num=1&amp;ie=UTF8&amp;t=h&amp;ll=41.893652,12.507505&amp;spn=0.019167,0.025663&amp;z=14&amp;output=embed"></iframe>
+
+</article>
 				<div class="clear"></div>
 			</div>
 		</section>
 		<footer>
 			<div class="container_24 clearfix">
 				<div class="grid_24">
-					<p>&copy <a href="http://luca.postregna.name">lucapost</a> ''' + str(current_time.year) + '''; <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">license CC by-nc</a>; edit: ''' + time.strftime("%Y%m%d %I:%M:%S %p", node.page.last_edit) + '''</p>
+					<p>&copy <a href="http://luca.postregna.name">lucapost</a> 2013; <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">license CC by-nc</a>; edit: 20130607 12:38:08 PM</p>
 				</div>
 			</div>
 			<div class="clear"></div>
 		</footer>	
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 </body>
-</html>'''	
+</html>
