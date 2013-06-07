@@ -92,6 +92,8 @@ def header(node):
 				<hgroup class="grid_8">
 					<h1>Color House</h1>
 					<h2>Appartamento al centro di Roma nel quartiere Esquilino a due passi dalla stazione Termini</h2>
+                    <h3>Email: <a href="mailto:pdilena@libero.it" title="email address">pdilena@libero.it</a><br/>
+                    Phone: +39 3389456208</h3>
                     <figure>
 						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_2''' + ITA + '''"/>
 						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2''' + ENG + '''"/>
@@ -102,9 +104,6 @@ def header(node):
 					<div id="slider">
 						<img src="/images/slider/01.jpg" title="entrata0" alt="entrata" class="slid"/>
 						<img src="/images/slider/03.jpg" title="entrata1" alt="entrata" class="slid"/>
-						<img src="/images/slider/04.jpg" title="entrata2" alt="entrata" class="slid"/>
-						<img src="/images/slider/07.jpg" title="entrata3" alt="entrata" class="slid"/>
-						<img src="/images/slider/08.jpg" title="entrata4" alt="entrata" class="slid"/>
 					</div>
 				</figure>
 				<div class="clear"></div>
