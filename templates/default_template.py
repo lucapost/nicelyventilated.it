@@ -2,7 +2,7 @@ import time
 import datetime
 
 SITE_NAME = "Color House"
-SITEMAP = "sitemap.xml"
+SITEMAP = "sitemap.xml.backup"
 URL = "http://nicelyventilated.it"
 SRC = "/home/lucapost/repo/nicelyventilated.it/src/" + LANG
 DST = "./" + LANG
