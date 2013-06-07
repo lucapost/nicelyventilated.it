@@ -91,6 +91,7 @@ h4 {
 
 section {
 	background-color: orange;
+    padding-top: 20px;
 }
 
 hgroup figure {
@@ -122,10 +123,12 @@ a.flag.current img {
 
 #slider {
 	margin-top: 20px;
+	border: 1px solid black;
 }
 
 #slider img {
-	border: 1px solid black;
+    width: 628px;
+    height: 298px;
 }
 
 #slider .pagination {
@@ -159,9 +162,14 @@ a.flag.current img {
 
 iframe {
     margin-bottom: 15px;
+    border: 1px solid black;
 }
 
 footer {
 	padding: 20px 0 0 0;
 	text-align: center;
+}
+
+footer a {
+    color: red;
 }
