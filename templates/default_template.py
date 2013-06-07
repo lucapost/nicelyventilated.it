@@ -60,6 +60,7 @@ def header(node):
 <!--		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
        	<meta name="author" content="lucapost" />
 	    <meta name="description" content="''' + DESC + '''" />
+        <meta name="google-translate-customization" content="85c95298d1001cd-c3455a69999fc7c9-gb0a8929d1708ec75-13"></meta>
        	<title>''' + TITLE + ''' | ''' + DESC + '''</title>
   		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" type="text/css" media="all" href="/css/reset.css" />
@@ -93,11 +94,16 @@ def header(node):
 					<h2>Appartamento al centro di Roma nel quartiere Esquilino a due passi dalla stazione Termini</h2>
 <!--                    <h3>email: <a href="mailto:pdilena@libero.it" alt="contatto email">pdilena@libero.it</a></h3>
                     <h3>phone: +39 1234567890</h3> -->
-                    <figure>
+                    <div id="google_translate_element"></div><script type="text/javascript">
+                    function googleTranslateElementInit() {
+                      new google.translate.TranslateElement({pageLanguage: 'it', includedLanguages: 'it,en,de,fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                      }
+                      </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--                    <figure>
 						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_2''' + ITA + '''"/>
 						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2''' + ENG + '''"/>
 						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 omega''' + DEU + '''"/>
-                    </figure>
+                    </figure> -->
 				</hgroup>
 				<figure class="grid_16">
 					<div id="slider">
