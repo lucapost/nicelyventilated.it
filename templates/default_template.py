@@ -46,6 +46,7 @@ def header(node):
 				window.f = new flux.slider('#slider', {
 					pagination: false,
                     controls: true,
+                    captions: true,
 					transitions: [ 'blocks2' ],
 					delay: 5500
 				});
@@ -61,7 +62,7 @@ def header(node):
                     <h3>Email: <a href="mailto:pdilena@tin.it" title="email address">pdilena@libero.it</a><br/>
                     Phone: <span>+39 3389456208</span></h3>
                     <figure>
-						<a href="/" title="italiano" class="flag grid_2 alpha prefix_2''' + ITA + '''"><img src="/images/ita.png" title="italiano" alt="bandiera"/></a>
+						<a href="/" title="italiano" class="flag grid_2 alpha''' + ITA + '''"><img src="/images/ita.png" title="italiano" alt="bandiera"/></a>
 						<a href="/en" title="english" class="flag grid_2''' + ENG + '''"><img src="/images/eng.png" title="english" alt="flag"/></a>
 						<a href="/de" title="deutch" class="flag grid_2 omega''' + DEU + '''"><img src="/images/deu.png" title="deutch" alt="flagge"/></a>
                     </figure> 
