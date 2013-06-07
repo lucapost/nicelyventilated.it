@@ -109,7 +109,7 @@ a.flag img {
 }
 
 a.flag.current img {
-     box-shadow: 0px 0px 12px black;
+    border: 1px solid blue;
 }
 
 
