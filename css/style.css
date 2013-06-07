@@ -35,6 +35,7 @@ h1 {
     line-height: 40px;
     font-family: 'PasseroOne-Regular', 'Gotham', Helvetica, Verdana, sans-serif;
     text-transform: uppercase;
+    text-shadow: 2px 2px red;
 }
 
 h2 {
@@ -64,6 +65,7 @@ h4 {
 	line-height: 20px;
     font-family: 'PasseroOne-Regular', 'Gotham', Helvetica, Verdana, sans-serif;
     color: blue;
+    text-shadow: 2px 2px red;
 	text-transform: uppercase;
     margin: 0px 0px 20px 0px;
 }
