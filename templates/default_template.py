@@ -80,7 +80,6 @@ def header(node):
 					
 				window.f = new flux.slider('#slider', {
 					pagination: true,
-                    captions: true,
                     controls: true,
 					transitions: [ 'blocks2' ],
 					delay: 5500
