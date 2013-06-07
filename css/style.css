@@ -65,7 +65,12 @@ h3 {
 
 h3 a {
     text-transform: none;
+    text-decoration: none;
     color: red;
+}
+
+h3 a:hover {
+    text-decoration: underline;
 }
 
 h3 span {
