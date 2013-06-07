@@ -124,40 +124,6 @@ a.flag.current img {
 	border: 1px solid black;
 }
 
-#slider img {
-    width: 628px;
-    height: 298px;
-}
-
-.caption {
-    padding: 0.2em 1em;
-}
-
-#slider .pagination {
-	list-style:none
-}
-
-.pagination {
-	list-style: none outside none;
-	padding-right: 15px;
-	margin-top: 3px;
-	overflow: hidden;
-}
-
-.pagination li {
-	cursor: pointer;
-	display: inline-block;
-	background-color: orange;
-	border-radius: 2;
-	text-indent: 10000px;
-	width: 8px;
-	height: 8px;
-}
-
-.pagination li.current {
-	background-color: yellow;
-}
-
 .content {
 	background: url('/images/colosseo.png') no-repeat 0px 60px;
 }
