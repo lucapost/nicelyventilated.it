@@ -80,6 +80,8 @@ def header(node):
 					
 				window.f = new flux.slider('#slider', {
 					pagination: true,
+                    captions: true,
+                    controls: true,
 					transitions: [ 'blocks2' ],
 					delay: 5500
 				});
@@ -107,11 +109,11 @@ def header(node):
 				</hgroup>
 				<figure class="grid_16">
 					<div id="slider">
-						<img src="/images/slider/01.jpg" title="entrata" alt="entrata" class="slid"/>
-						<img src="/images/slider/03.jpg" title="entrata" alt="entrata" class="slid"/>
-						<img src="/images/slider/04.jpg" title="entrata" alt="entrata" class="slid"/>
-						<img src="/images/slider/07.jpg" title="entrata" alt="entrata" class="slid"/>
-						<img src="/images/slider/08.jpg" title="entrata" alt="entrata" class="slid"/>
+						<img src="/images/slider/01.jpg" title="entrata0" alt="entrata" class="slid"/>
+						<img src="/images/slider/03.jpg" title="entrata1" alt="entrata" class="slid"/>
+						<img src="/images/slider/04.jpg" title="entrata2" alt="entrata" class="slid"/>
+						<img src="/images/slider/07.jpg" title="entrata3" alt="entrata" class="slid"/>
+						<img src="/images/slider/08.jpg" title="entrata4" alt="entrata" class="slid"/>
 					</div>
 				</figure>
 				<div class="clear"></div>
