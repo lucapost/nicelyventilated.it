@@ -1,9 +1,9 @@
 import time
 import datetime
 
-SITE_NAME = " "
+SITE_NAME = "Color House "
 SITEMAP = "sitemap.xml"
-URL = "http://romecolorhouse"
+URL = "http://nicelyventilated.it"
 HOME = "home"
 PATH_SEPARATOR = '/'
 SRC_EXT = {"markdown": "md", "textile": "tt", "plain": "txt"}
@@ -11,40 +11,6 @@ DST_EXT = "html"
 HIDDEN = set(["404.md"])
 
 current_time = datetime.datetime.now()
-
-def menu(node):
-    """Generate a hierarchical menu."""
-
-    global menu_code
-
-    menu_code = '\n'
-    root = node
-    while root.parent:
-        root = root.parent
-    menu_(root, node)
-    return menu_code
-
-def menu_(node, cur_node, node_prefix = PREFIX, indent = ''):
-    """Auxiliary recursive function for menu generation."""
-
-    global menu_code
-
-    menu_code += indent + '<ul>\n'
-    for child in sorted(node.children, key=lambda n: n.page.src_pathname):
-        if child.page.dst_file.startswith("index.") or child.page.src_file in HIDDEN:
-            continue
-        menu_code += indent + '<li class="level-' + str(child.page.level) + '"><a '
-        if(child == cur_node
-        or (cur_node.page.dst_file.startswith("index.") and child == cur_node.parent)):
-            menu_code += 'class="current" '
-        menu_code += 'href="' + node_prefix + child.page.dst_file
-        if child.children:
-            menu_code += "/index." + DST_EXT + '">'    + child.page.name + '</a>\n'
-            menu_(child, cur_node, node_prefix + child.page.dst_file + '/', indent + '\t')
-            menu_code += indent + '</li>\n'
-        else:
-            menu_code += '">'   + child.page.name + '</a></li>\n'
-    menu_code += indent + '</ul>\n'
 
 def header(node):
     """Build the header and return it to a string."""
@@ -60,7 +26,7 @@ def header(node):
 <!--		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
        	<meta name="author" content="lucapost" />
 	    <meta name="description" content="''' + DESC + '''" />
-       	<title>''' + TITLE + ''' | ''' + DESC + '''</title>
+       	<title>''' + SITE_NAME + ''' | ''' + DESC + '''</title>
   		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" type="text/css" media="all" href="/css/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="/css/text.css" />
@@ -90,14 +56,14 @@ def header(node):
 		<header>
 			<div class="container_24 clearfix">
 				<hgroup class="grid_8">
-					<h1>Color House</h1>
-					<h2>Appartamento al centro di Roma nel <span>quartiere Esquilino</span> a due passi dalla <span>stazione Termini</span></h2>
+					<h1><a href="/" title="home page">Color House</a></h1>
+					<h2>''' + SUBTITLE + '''</h2>
                     <h3>Email: <a href="mailto:pdilena@tin.it" title="email address">pdilena@libero.it</a><br/>
                     Phone: <span>+39 3389456208</span></h3>
                     <figure>
-						<img src="/images/ita.png" title="entrata" alt="entrata" class="flag grid_2 alpha prefix_2''' + ITA + '''"/>
-						<img src="/images/eng.png" title="entrata" alt="entrata" class="flag grid_2''' + ENG + '''"/>
-						<img src="/images/deu.png" title="entrata" alt="entrata" class="flag grid_2 omega''' + DEU + '''"/>
+						<a href="/" title="italiano" class="flag grid_2 alpha prefix_2''' + ITA + '''"><img src="/images/ita.png" title="italiano" alt="bandiera"/></a>
+						<a href="/en" title="english" class="flag grid_2''' + ENG + '''"><img src="/images/eng.png" title="english" alt="flag"/></a>
+						<a href="/de" title="deutch" class="flag grid_2 omega''' + DEU + '''"><img src="/images/deu.png" title="deutch" alt="flagge"/></a>
                     </figure> 
 				</hgroup>
 				<figure class="grid_16">
