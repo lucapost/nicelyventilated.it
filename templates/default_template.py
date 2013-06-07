@@ -59,7 +59,7 @@ def header(node):
 				<hgroup class="grid_8">
 					<h1><a href="/" title="home page">Color House</a></h1>
 					<h2>''' + SUBTITLE + '''</h2>
-                    <h3>Email: <a href="mailto:pdilena@tin.it" title="email address">pdilena@libero.it</a><br/>
+                    <h3>Email: <a href="mailto:pdilena@tin.it" title="email address">pdilena@tin.it</a><br/>
                     Phone: <span>+39 3389456208</span></h3>
                     <figure>
 						<a href="/" title="italiano" class="flag grid_2 alpha''' + ITA + '''"><img src="/images/ita.png" title="italiano" alt="bandiera"/></a>
