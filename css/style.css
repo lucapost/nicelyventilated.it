@@ -125,7 +125,7 @@ a.flag.current img {
 }
 
 .content {
-	background: url('/images/colosseo.png') no-repeat 0px 60px;
+	background: url('/images/colosseo.png') center 170px no-repeat;
 }
 
 iframe {
