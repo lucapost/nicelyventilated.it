@@ -47,7 +47,7 @@ def header(node):
 					pagination: false,
                     controls: true,
                     captions: true,
-					transitions: [ 'blocks2' ],
+					transitions: [ 'dissolve' ],
 					delay: 5500
 				});
 			});
