@@ -42,8 +42,8 @@ h1 a:visited {
 
 
 h2 {
-	font-size: 28px;
-	line-height: 30px;
+	font-size: 32px;
+	line-height: 40px;
 	font-family: 'montez', Helvetica, Verdana, sans-serif;
 	margin-top: 20px;
 }
@@ -91,14 +91,14 @@ hgroup figure {
 }
 
 p {	
-	font-size: 28px;
-	line-height: 30px;
+	font-size: 32px;
+	line-height: 40px;
 	font-family: 'montez', Helvetica, Verdana, sans-serif;
 }
 
 li {
-	font-size: 28px;
-	line-height: 30px;
+	font-size: 32px;
+	line-height: 40px;
 	font-family: 'montez', Helvetica, Verdana, sans-serif;
 }
 
