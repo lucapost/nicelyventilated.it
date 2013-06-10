@@ -112,7 +112,7 @@ def footer(node):
     """Build the footer and return it to a string."""
 
     return '''
-                        <article id="colosseo"></article>
+                        <article id="default"></article>
 	    	        </section>
                 </div>
 			    <div class="clear"></div>

@@ -131,7 +131,7 @@ section.items article:not(:target) {
         display: none;
 }
 
-section.items article#colosseo,
+section.items article#default,
 section.items article:target {
     display: block;
     -webkit-animation: fadeIn 2s;
@@ -142,8 +142,8 @@ article {
     margin: 0;
 }
 
-article#colosseo {
-    background: url('/images/colosseo.png') 0px 0px no-repeat;
+article#default {
+    background: url('/images/bernini1.png') left top no-repeat/*, url('/images/bernini2.png') 200px top no-repeat;*/
     height: 180px;
     width: 540px;
     -webkit-animation: fadeIn 0s;
