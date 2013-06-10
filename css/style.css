@@ -69,6 +69,8 @@ h3 {
     font-family: 'roboto', Helvetica, Verdana, sans-serif;
     margin: 0px 0px 20px 0px;
     color: #a700b6;
+    text-transform: uppercase;
+    text-align: right;
 }
 
 .privacy {
@@ -123,6 +125,10 @@ nav ul li a:hover {
     -o-transition: All 0.5s ease;
     -ms-transition: All 0.5s ease;
     transition: All 0.5s ease;
+}
+
+nav ul li a:focus {
+    color: red;
 }
 
 section {
