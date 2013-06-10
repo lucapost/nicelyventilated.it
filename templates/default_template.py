@@ -88,8 +88,26 @@ def header(node):
 				</hgroup>
 				<figure class="grid_7">
 					<div id="slider">
-						<img src="/images/slider/01.jpg" title="entrata0" alt="entrata" class="slid"/>
-						<img src="/images/slider/03.jpg" title="entrata1" alt="entrata" class="slid"/>
+						<img src="/images/slider/01.jpg" title="1/20" alt="#" class="slid"/>
+						<img src="/images/slider/02.jpg" title="2/20" alt="#" class="slid"/>
+						<img src="/images/slider/03.jpg" title="3/20" alt="#" class="slid"/>
+						<img src="/images/slider/04.jpg" title="4/20" alt="#" class="slid"/>
+						<img src="/images/slider/05.jpg" title="5/20" alt="#" class="slid"/>
+						<img src="/images/slider/06.jpg" title="6/20" alt="#" class="slid"/>
+						<img src="/images/slider/07.jpg" title="7/20" alt="#" class="slid"/>
+						<img src="/images/slider/08.jpg" title="8/20" alt="#" class="slid"/>
+						<img src="/images/slider/09.jpg" title="9/20" alt="#" class="slid"/>
+						<img src="/images/slider/10.jpg" title="10/20" alt="#" class="slid"/>
+						<img src="/images/slider/11.jpg" title="11/20" alt="#" class="slid"/>
+						<img src="/images/slider/12.jpg" title="12/20" alt="#" class="slid"/>
+						<img src="/images/slider/13.jpg" title="13/20" alt="#" class="slid"/>
+						<img src="/images/slider/14.jpg" title="14/20" alt="#" class="slid"/>
+						<img src="/images/slider/15.jpg" title="15/20" alt="#" class="slid"/>
+						<img src="/images/slider/16.jpg" title="16/20" alt="#" class="slid"/>
+						<img src="/images/slider/17.jpg" title="17/20" alt="#" class="slid"/>
+						<img src="/images/slider/18.jpg" title="18/20" alt="#" class="slid"/>
+						<img src="/images/slider/19.jpg" title="19/20" alt="#" class="slid"/>
+						<img src="/images/slider/20.jpg" title="20/20" alt="#" class="slid"/>
 					</div>
 				</figure>
 				<div class="clear"></div>
