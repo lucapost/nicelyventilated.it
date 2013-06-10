@@ -12,10 +12,19 @@
     src: local('montez'), url('/fonts/Montez-Regular.ttf') format('truetype');
 }
 
-
 * {
     margin: 0px;
     padding: 0px;
+}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 hgroup {
@@ -46,7 +55,7 @@ h2 {
 	line-height: 40px;
 	font-family: 'montez', Helvetica, Verdana, sans-serif;
     text-align: center;
-    margin-top:20px;
+    margin-top: 20px;
     font-weight: normal;
 }
 
@@ -55,27 +64,6 @@ h2 span {
 }
 
 h3 {
-	font-size: 20px;
-	line-height: 20px;
-	font-family: 'montez', Helvetica, Verdana, sans-serif;
-    margin-top: 20px;
-}
-
-h3 span {
-    color: blue;
-}
-
-h3 a {
-    text-transform: none;
-    text-decoration: none;
-    color: blue;
-}
-
-h3 a:hover {
-    text-decoration: underline;
-}
-
-h4 {
 	font-size: 40px;
 	line-height: 40px;
     font-family: 'euphoria', Helvetica, Verdana, sans-serif;
@@ -88,7 +76,7 @@ h4 {
 }
 
 nav {
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: right;
 }
 
@@ -113,6 +101,11 @@ nav ul li a:visited {
 
 nav ul li a:hover {
     color: white;
+    -webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    -ms-transition: All 0.5s ease;
+    transition: All 0.5s ease;
 }
 
 section.items article:not(:target) {
@@ -121,8 +114,8 @@ section.items article:not(:target) {
 
 section.items article:target {
         display: block;
-        -webkit-animation: fadeIn 1s;
-         animation: fadeIn 1s;
+        -webkit-animation: fadeIn 2s;
+         animation: fadeIn 2s;
 }
 
 article {
