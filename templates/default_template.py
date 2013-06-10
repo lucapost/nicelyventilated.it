@@ -95,23 +95,26 @@ def header(node):
 				<div class="clear"></div>
 			</div>
 		</header>
-        <div class="main">
+        <div class="main" id="top">
     		<div class="container_12 clearfix">
                 <nav class="grid_3 prefix_1">
                     <ul>
-                        <li><a href="/#lacasa" title="descrizione dell'appartamento">La casa</a></li>
-                        <li><a href="/#dovesiamo" title="dove siamo">Dove Siamo</a></li>
-                        <li><a href="/#prezzi" title="prezzi">Prezzi</a></li>
-                        <li><a href="/#contatti" title="come contattarci">Contatti</a></li>
+                        <li><p><a href="/#lacasa" title="descrizione dell'appartamento">La casa</a></p></li>
+                        <li><p><a href="/#dovesiamo" title="dove siamo">Dove Siamo</a></p></li>
+                        <li><p><a href="/#prezzi" title="prezzi">Prezzi</a></p></li>
+                        <li><p><a href="/#contatti" title="come contattarci">Contatti</a></p></li>
                     </ul>
                 </nav>
-                <section class="grid_7 items">
+                <div class="grid_7">
+                    <section class="items">
 			'''
 def footer(node):
     """Build the footer and return it to a string."""
 
     return '''
-		        </section>
+                        <article id="colosseo"></article>
+	    	        </section>
+                </div>
 			    <div class="clear"></div>
             </div>
         </div>
