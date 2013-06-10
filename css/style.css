@@ -143,7 +143,7 @@ article {
 }
 
 article#default {
-    background: url('/images/bernini1.png') left top no-repeat/*, url('/images/bernini2.png') 200px top no-repeat;*/
+    background: url('/images/bernini1.png') left top no-repeat;/*, url('/images/bernini2.png') 200px top no-repeat;*/
     height: 180px;
     width: 540px;
     -webkit-animation: fadeIn 0s;
