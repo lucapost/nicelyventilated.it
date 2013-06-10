@@ -1,4 +1,4 @@
-notextile. <article class="grid_8">
+notextile. <article id="item1">
 
 h4. The apartment
 
@@ -12,7 +12,7 @@ All linen. Large bathroom with shower and bath.
 
 TV, Internet WiFi.
 
-notextile. </article><article class="grid_8">
+notextile. </article><article id="item2">
 
 h4. Location
 
@@ -38,16 +38,7 @@ and:
 * Baths of Caracalla;
 * Circus Maximus.
 
-notextile. </article><article class="grid_8">
-
-h4. Map
-
-notextile. <iframe width="308" height="258" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=41.89378,12.507323&amp;num=1&amp;ie=UTF8&amp;t=h&amp;ll=41.893652,12.507505&amp;spn=0.019167,0.025663&amp;z=14&amp;output=embed"></iframe>
-
-h4. Contacts
-
-Email: "pdilena@tin.it":pdilena@tin.it
-Phone: +39 3389456208
+notextile. </article><article id="item3">
 
 h4. Prices
 
@@ -57,5 +48,14 @@ The expected price is € 100 per night up to two people, each additional person
 * € 1,800 / month.
 
 Cleaning fee of € 40.
+
+notextile. </article><article id="item4">
+
+h4. Contacts
+
+Email: "pdilena@tin.it":pdilena@tin.it
+Phone: +39 3389456208
+
+notextile. <iframe width="538" height="258" src="https://maps.google.com/maps?q=41.89378,12.507323&amp;num=1&amp;ie=UTF8&amp;t=h&amp;ll=41.893652,12.507505&amp;spn=0.019167,0.025663&amp;z=14&amp;output=embed"></iframe>
 
 notextile. </article>
