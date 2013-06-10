@@ -64,13 +64,12 @@ h2 span {
 }
 
 h3 {
-	font-size: 24px;
+	font-size: 32px;
 	line-height: 40px;
-    font-family: 'roboto', Helvetica, Verdana, sans-serif;
+    font-family: 'euphoria', Helvetica, Verdana, sans-serif;
     margin: 0px 0px 20px 0px;
     color: #a700b6;
-    text-transform: uppercase;
-    text-align: right;
+    text-align:center;
 }
 
 .privacy {
@@ -83,6 +82,7 @@ h4 {
     font-family: 'euphoria', Helvetica, Verdana, sans-serif;
     margin: 0px 0px 20px 0px;
     color: #a700b6;
+    text-align:center;
 }
 
 .main {
