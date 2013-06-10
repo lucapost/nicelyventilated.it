@@ -81,9 +81,9 @@ def header(node):
 					<h1><a href="/" title="home page">Color House</a></h1>
 					<h2>''' + SUBTITLE + '''</h2>
                     <figure>
-						<a href="/" title="italiano" class="flag grid_2 alpha''' + ITA + '''"><img src="/images/ita.png" title="italiano" alt="bandiera"/></a>
-						<a href="/en" title="english" class="flag grid_2''' + ENG + '''"><img src="/images/eng.png" title="english" alt="flag"/></a>
-						<a href="#" title="deutch" class="flag grid_2 omega''' + DEU + '''"><img src="/images/deu.png" title="deutch" alt="flagge"/></a>
+						<a href="/" title="italiano" class="grid_1 alpha"><img src="/images/ita.png" title="italiano" alt="bandiera" class="flag''' + ITA + '''" /></a>
+						<a href="/en" title="english" class="grid_1"><img src="/images/eng.png" title="english" alt="flag" class="flag''' + ENG + '''" /></a>
+						<a href="#" title="deutch" class="grid_1 omega"><img src="/images/deu.png" title="deutch" alt="flagge" class="flag''' + DEU + '''" /></a>
                     </figure> 
 				</hgroup>
 				<figure class="grid_16">

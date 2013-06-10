@@ -102,13 +102,13 @@ li {
 	font-family: 'montez', Helvetica, Verdana, sans-serif;
 }
 
-a.flag img {
-    height: 38px;
-    width: 68px;
+img.flag {
+    height: 18px;
+    width: 28px;
     border: 1px solid black;
 }
 
-a.flag.current img {
+img.flag.current {
     border: 1px solid blue;
 }
 
