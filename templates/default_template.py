@@ -81,9 +81,9 @@ def header(node):
 					<h2>''' + SUBTITLE + '''</h2>
                 </div>
 				<hgroup class="grid_3 prefix_1">
-					<h1><a href="/" title="home page">Color House</a></h1>
+					<h1><a href="#" title="home page">Color House</a></h1>
 					<a href="/" title="italiano" class="grid_1 alpha"><img src="/images/ita.png" title="italiano" alt="bandiera" class="flag''' + ITA + '''" /></a>
-					<a href="#" title="english" class="grid_1"><img src="/images/eng.png" title="english" alt="flag" class="flag''' + ENG + '''" /></a>
+					<a href="/en" title="english" class="grid_1"><img src="/images/eng.png" title="english" alt="flag" class="flag''' + ENG + '''" /></a>
 					<a href="#" title="deutch" class="grid_1 omega"><img src="/images/deu.png" title="deutch" alt="flagge" class="flag''' + DEU + '''" /></a>
 				</hgroup>
 				<figure class="grid_7">
@@ -116,12 +116,7 @@ def header(node):
         <div class="main" id="top">
     		<div class="container_12 clearfix">
                 <nav class="grid_3 prefix_1">
-                    <ul>
-                        <li><p><a href="#item1" title="descrizione dell'appartamento">La casa</a></p></li>
-                        <li><p><a href="#item2" title="dove siamo">Dove siamo</a></p></li>
-                        <li><p><a href="#item3" title="prezzi">Prezzi</a></p></li>
-                        <li><p><a href="#item4" title="come contattarci">Contatti</a></p></li>
-                    </ul>
+                    <ul>''' + MENU + '''</ul>
                 </nav>
                 <div class="grid_7">
                     <section class="items">
