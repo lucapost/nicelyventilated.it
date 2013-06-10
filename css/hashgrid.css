@@ -28,16 +28,16 @@
  */
 #grid div.vert{
 
-    width: 29px;
+    width: 59px;
     border: solid darkturquoise;
     border-width: 0 1px;
-    margin-right: 9px;
+    margin-right: 19px;
 
 }
 
 #grid div.vert.first-line{
 
-    margin-left: 14px;
+    margin-left: 19px;
 
 }
 

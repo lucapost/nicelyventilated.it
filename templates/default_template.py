@@ -76,16 +76,17 @@ def header(node):
 	</head>
 	<body>
 		<header>
-			<div class="container_24 clearfix">
-				<hgroup class="grid_8">
-					<h1><a href="/" title="home page">Color House</a></h1>
+			<div class="container_12 clearfix">
+                <div class="grid_10 prefix_1">
 					<h2>''' + SUBTITLE + '''</h2>
-<!--					<a href="/" title="italiano" class="grid_1 alpha"><img src="/images/ita.png" title="italiano" alt="bandiera" class="flag''' + ITA + '''" /></a>
-					<a href="/en" title="english" class="grid_1"><img src="/images/eng.png" title="english" alt="flag" class="flag''' + ENG + '''" /></a>
+                </div>
+				<hgroup class="grid_3 prefix_1">
+					<h1><a href="/" title="home page">Color House</a></h1>
+					<a href="/" title="italiano" class="grid_1 alpha"><img src="/images/ita.png" title="italiano" alt="bandiera" class="flag''' + ITA + '''" /></a>
+					<a href="#" title="english" class="grid_1"><img src="/images/eng.png" title="english" alt="flag" class="flag''' + ENG + '''" /></a>
 					<a href="#" title="deutch" class="grid_1 omega"><img src="/images/deu.png" title="deutch" alt="flagge" class="flag''' + DEU + '''" /></a>
-                    -->
 				</hgroup>
-				<figure class="grid_16">
+				<figure class="grid_7">
 					<div id="slider">
 						<img src="/images/slider/01.jpg" title="entrata0" alt="entrata" class="slid"/>
 						<img src="/images/slider/03.jpg" title="entrata1" alt="entrata" class="slid"/>
@@ -94,24 +95,31 @@ def header(node):
 				<div class="clear"></div>
 			</div>
 		</header>
-		<section>
-			<div class="container_24 clearfix content">
+        <div class="main">
+    		<div class="container_12 clearfix">
+                <nav class="grid_3 prefix_1">
+                    <ul>
+                        <li><a href="/#lacasa" title="descrizione dell'appartamento">La casa</a></li>
+                        <li><a href="/#dovesiamo" title="dove siamo">Dove Siamo</a></li>
+                        <li><a href="/#prezzi" title="prezzi">Prezzi</a></li>
+                        <li><a href="/#contatti" title="come contattarci">Contatti</a></li>
+                    </ul>
+                </nav>
+                <section class="grid_7 items">
 			'''
 def footer(node):
     """Build the footer and return it to a string."""
 
     return '''
-				<div class="clear"></div>
-			</div>
-		</section>
-		<footer>
-			<div class="container_24 clearfix">
-				<div class="grid_24">
-					<p>&copy <a href="http://luca.postregna.name">lucapost</a> ''' + str(current_time.year) + '''; <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">license CC by-nc</a>; edit: ''' + time.strftime("%Y%m%d %I:%M:%S %p", node.page.last_edit) + '''</p>
-				</div>
-			</div>
+		        </section>
+			    <div class="clear"></div>
+            </div>
+        </div>
+		<div class="container_12 clearfix">
+	        <footer class="grid_12">
+				    <p>&copy <a href="http://luca.postregna.name">lucapost</a> ''' + str(current_time.year) + '''; <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">license CC by-nc</a>; edit: ''' + time.strftime("%Y%m%d %I:%M:%S %p", node.page.last_edit) + '''</p>
+		    </footer>	
 			<div class="clear"></div>
-		</footer>	
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 </body>
 </html>'''	
