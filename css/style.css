@@ -46,6 +46,7 @@ h2 {
 	line-height: 40px;
 	font-family: 'montez', Helvetica, Verdana, sans-serif;
 	margin-top: 20px;
+    min-height: 140px;
 }
 
 h2 span {
@@ -87,7 +88,8 @@ section {
 }
 
 hgroup figure {
-    margin-top: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 p {	
