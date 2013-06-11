@@ -77,14 +77,14 @@ def header(node):
 	<body>
 		<header>
 			<div class="container_12 clearfix">
-                <div class="grid_10 prefix_1">
+                <div class="grid_12">
 					<h2>''' + SUBTITLE + '''</h2>
                 </div>
 				<hgroup class="grid_4">
 					<h1><a href="#" title="home page">Color House</a></h1>
 					<a href="/" title="italiano" class="prefix_1 grid_1 alpha"><img src="/images/ita.png" title="italiano" alt="bandiera" class="flag''' + ITA + '''" /></a>
 					<a href="/en" title="english" class="grid_1"><img src="/images/eng.png" title="english" alt="flag" class="flag''' + ENG + '''" /></a>
-					<a href="#" title="deutch" class="grid_1 omega"><img src="/images/deu.png" title="deutch" alt="flagge" class="flag''' + DEU + '''" /></a>
+					<a href="/de" title="deutch" class="grid_1 omega"><img src="/images/deu.png" title="deutch" alt="flagge" class="flag''' + DEU + '''" /></a>
 				</hgroup>
 				<figure class="grid_7">
 					<div id="slider">

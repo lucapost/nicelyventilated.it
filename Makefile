@@ -1,6 +1,7 @@
 generate: 
 	./minimalsite.py -t templates/it_template.py
 	./minimalsite.py -t templates/en_template.py
+	./minimalsite.py -t templates/de_template.py
 
 update:
 	make
