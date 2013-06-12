@@ -2,7 +2,7 @@ import time
 import datetime
 
 SITE_NAME = "Color House"
-SITEMAP = "sitemap.xml.backup"
+SITEMAP = ""
 URL = "http://nicelyventilated.it"
 SRC = "/home/lucapost/repo/nicelyventilated.it/src/" + LANG
 DST = "./" + LANG
@@ -17,24 +17,74 @@ ENG = ""
 DEU = ""
 pics = {
     "01.jpg": {
-        "it": ["title1_it", "alt1_it"],
-        "en": ["title1_en", "alt1_en"],
-        "de": ["title1_de", "alt1_de"]},
+        "it": ["La porta d'ingresso... in fondo a destra", "alt1"],
+        "en": ["Your arrival... on the far right", "alt1"],
+        "de": ["Ihre Ankunft... in der unteren rechten Seite", "alt1"]},
     "02.jpg": {
-        "it": ["title2_it", "alt2_it"],
-        "en": ["title2_en", "alt2_en"],
-        "de": ["title2_de", "alt2_de"]},
+        "it": ["La entrata in color house", "alt2"],
+        "en": ["Your entry in clor house", "alt2"],
+        "de": ["Ihr Eintrag in Color House", "alt2"]},
     "03.jpg": {
-        "it": ["title3_it", "alt3_it"],
-        "en": ["title3_en", "alt3_en"],
-        "de": ["title3_de", "alt3_de"]}
+        "it": ["Un bel punto di vista", "alt3"],
+        "en": ["A nice point of view", "alt3"],
+        "de": ["Eine schone Aussicht", "alt3"]},
+    "04.jpg": {
+        "it": ["La cucina e la sala da pranzo", "alt4"],
+        "en": ["The kitchen and the dining room", "alt4"],
+        "de": ["Auf der rechten Seite Kuche und das Esszimmer", "alt4"]},
+    "05.jpg": {
+        "it": ["Il tavolo con fiori profumati", "alt5"],
+        "en": ["Table with fragrant flowers", "alt5"],
+        "de": ["Ihren Tisch mit duftenden Blumen", "alt5"]},
+    "06.jpg": {
+        "it": ["Una cucina ben attrezzata", "alt6"],
+        "en": ["A well equipped kitchen", "alt6"],
+        "de": ["Kuche", "alt6"]},
+    "07.jpg": {
+        "it": ["Camera matrimoniale avvolta dal colore rosso", "alt7"],
+        "en": ["Twin bedroom wrapped in red", "alt7"],
+        "de": ["Ein Schlafzimmer mit Doppelbett in Rot gehullt", "alt7"]},
+    "08.jpg": {
+        "it": ["La camera matrimoniale rossa con il morbido parquet", "alt8"],
+        "en": ["The red double bedroom with smooth parquet", "alt8"],
+        "de": ["Das rote Schlafzimmer mit Holzboden", "alt8"]},
+    "09.jpg": {
+        "it": ["Bagno in mosaico verde", "alt9"],
+        "en": ["Green mosaic bathroom", "alt9"],
+        "de": ["Das grune Mosaikbadezimmer", "alt9"]},
+    "10.jpg": {
+        "it": ["Lo stesso bagno ma con la doccia", "alt10"],
+        "en": ["The same bath with the shower", "alt10"],
+        "de": ["Das gleiche Bad mit der Dusche", "alt10"]},
+    "11.jpg": {
+        "it": ["Camera doppia fresca e luminosa", "alt11"],
+        "en": ["Double room fresh and bright", "alt11"],
+        "de": ["Doppelzimmer frisch und hell", "alt11"]},
+    "12.jpg": {
+        "it": ["Camera doppia,parquet, fiori e luce", "alt12"],
+        "en": ["Double room, parquet , flowers and light", "alt12"],
+        "de": ["Doppelzimmer, Holzparkett, Blumen und Licht", "alt12"]},
+    "13.jpg": {
+        "it": ["Salotto con colori... o camera da letto", "alt13"],
+        "en": ["Living room with colors... or bedroom", "alt13"],
+        "de": ["Wohnzimmer mit Farben ... oder auch Schlafzimmer", "alt13"]},
+    "14.jpg": {
+        "it": ["Ci piace camminare sul legno", "alt14"],
+        "en": ["We like to walk on the wood", "alt14"],
+        "de": ["Es gefaellt uns auf dem Holz zu schweben", "alt14"]},
+    "15.jpg": {
+        "it": ["Fresca luce, calore e colori", "alt15"],
+        "en": ["Fresh light, colored and warm", "alt15"],
+        "de": ["Frisches Licht, Warme athmosphere und Farben", "alt15"]}
 }
 
-html_code = '<img src="/images/slider/{}" title="{}" alt="{}">'
-
+html_code = '<img src="/images/slider/{}" title="{}/{} - {}" alt="{}">'
+picsnum = len(pics)
 html_gallery = ""
+count = 1
 for pic in sorted(pics):
-    html_gallery += (html_code.format(pic, pics[pic][LANG][0], pics[pic][LANG][1]))
+    html_gallery += (html_code.format(pic, count, picsnum, pics[pic][LANG][0], pics[pic][LANG][1]))
+    count += 1
 
 if LANG == "en":
     ENG = " current"
