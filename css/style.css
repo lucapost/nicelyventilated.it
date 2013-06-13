@@ -171,7 +171,9 @@ img.flag {
 }
 
 img.flag.current {
-    border: 1px solid #a700b6;
+    border: 3px solid #a700b6;
+    height: 34px;
+    width: 54px;
 }
 
 #slider {
