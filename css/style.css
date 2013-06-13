@@ -124,7 +124,7 @@ nav ul li a:focus {
 }
 
 section {
-    padding: 20px 0 0 0;
+    padding: 20px 0 20px 0;
 }
 
 section.items article:not(:target) {
@@ -140,15 +140,6 @@ section.items article:target {
 
 article {
     margin: 0;
-}
-
-article#default {
-    background: url('/images/colosseo.png') center top no-repeat;
-    background-size: 540px 160px;
-    height: 180px;
-    width: 540px;
-    -webkit-animation: fadeIn 0s;
-    animation: fadeIn 0s;
 }
 
 article a,
