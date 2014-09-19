@@ -159,7 +159,7 @@ def footer(node):
 		<div class="container_12 clearfix">
 	        <footer class="grid_12">
 				    <p>&copy <a href="http://luca.postregna.name">lucapost</a> ''' + str(current_time.year) + '''; <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">license</a>; <a href="/privacy.html" title="normativa per la privacy">privacy</a>; edit: ''' + time.strftime("%Y%m%d %I:%M:%S %p", node.page.last_edit) + '''</p>
-                    <p>email: <a href="mailto:pdilena@tin.it" title="contatto email">pdilena@tin.it</a>; phone: +39 3389456208</p>
+                    <p>email: <a href="mailto:patdilenardo@gmail.com" title="contatto email">patdilenardo@gmail.com</a>; phone: +39 3389456208</p>
 		    </footer>	
 			<div class="clear"></div>
   		<script src="/js/hashgrid.js"></script> 
