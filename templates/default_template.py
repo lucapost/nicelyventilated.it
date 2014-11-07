@@ -7,7 +7,7 @@ SITE_NAME = "Color House"
 SITEMAP = ""
 URL = "http://nicelyventilated.it"
 SRC = "/home/lucapost/repo/nicelyventilated.it/src/" + LANG
-DST = "./" + LANG
+DST = "./dst/" + LANG
 PREFIX = "/"
 HOME = "/"
 PATH_SEPARATOR = "/"
@@ -94,7 +94,7 @@ elif LANG == "de":
     DEU = " current"
 else:
     ITA = " current"
-    DST = "./"
+    DST = "./dst/"
 
 current_time = datetime.datetime.now()
 
