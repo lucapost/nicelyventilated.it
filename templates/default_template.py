@@ -19,65 +19,93 @@ ENG = ""
 DEU = ""
 pics = {
     "01.jpg": {
-        "it": ["La porta d'ingresso... in fondo a destra", "alt1"],
-        "en": ["Your arrival... on the far right", "alt1"],
-        "de": ["Ihre Ankunft... in der unteren rechten Seite", "alt1"]},
+        "it": ["ingresso", "alt1"],
+        "en": ["entrance", "alt1"],
+        "de": ["eingang", "alt1"]},
     "02.jpg": {
-        "it": ["La entrata in color house", "alt2"],
-        "en": ["Your entry in clor house", "alt2"],
-        "de": ["Ihr Eintrag in Color House", "alt2"]},
+        "it": ["ingresso", "alt2"],
+        "en": ["entrance", "alt2"],
+        "de": ["eingang", "alt2"]},
     "03.jpg": {
-        "it": ["Un bel punto di vista", "alt3"],
-        "en": ["A nice point of view", "alt3"],
-        "de": ["Eine schone Aussicht", "alt3"]},
+        "it": ["affacci nella casa", "alt3"],
+        "en": ["views in the house", "alt3"],
+        "de": ["blick in das haus", "alt3"]},
     "04.jpg": {
-        "it": ["La cucina e la sala da pranzo", "alt4"],
-        "en": ["The kitchen and the dining room", "alt4"],
-        "de": ["Auf der rechten Seite Kuche und das Esszimmer", "alt4"]},
+        "it": ["affacci nella casa", "alt4"],
+        "en": ["views in the house", "alt4"],
+        "de": ["blick in das haus", "alt4"]},
     "05.jpg": {
-        "it": ["Il tavolo con fiori profumati", "alt5"],
-        "en": ["Table with fragrant flowers", "alt5"],
-        "de": ["Ihren Tisch mit duftenden Blumen", "alt5"]},
+        "it": ["camera arlecchino", "alt5"],
+        "en": ["harlequin room", "alt5"],
+        "de": ["zimmer harlekin", "alt5"]},
     "06.jpg": {
-        "it": ["Una cucina ben attrezzata", "alt6"],
-        "en": ["A well equipped kitchen", "alt6"],
-        "de": ["Kuche", "alt6"]},
+        "it": ["camera arlecchino", "alt5"],
+        "en": ["harlequin room", "alt5"],
+        "de": ["zimmer harlekin", "alt5"]},
     "07.jpg": {
-        "it": ["Camera matrimoniale avvolta dal colore rosso", "alt7"],
-        "en": ["Twin bedroom wrapped in red", "alt7"],
-        "de": ["Ein Schlafzimmer mit Doppelbett in Rot gehullt", "alt7"]},
+        "it": ["camera arlecchino", "alt5"],
+        "en": ["harlequin room", "alt5"],
+        "de": ["zimmer harlekin", "alt5"]},
     "08.jpg": {
-        "it": ["La camera matrimoniale rossa con il morbido parquet", "alt8"],
-        "en": ["The red double bedroom with smooth parquet", "alt8"],
-        "de": ["Das rote Schlafzimmer mit Holzboden", "alt8"]},
+        "it": ["camera gialla", "alt6"],
+        "en": ["yellow room", "alt6"],
+        "de": ["das geble zimmer", "alt6"]},
     "09.jpg": {
-        "it": ["Bagno in mosaico verde", "alt9"],
-        "en": ["Green mosaic bathroom", "alt9"],
-        "de": ["Das grune Mosaikbadezimmer", "alt9"]},
+        "it": ["camera gialla", "alt6"],
+        "en": ["yellow room", "alt6"],
+        "de": ["das geble zimmer", "alt6"]},
     "10.jpg": {
-        "it": ["Lo stesso bagno ma con la doccia", "alt10"],
-        "en": ["The same bath with the shower", "alt10"],
-        "de": ["Das gleiche Bad mit der Dusche", "alt10"]},
+        "it": ["camera gialla", "alt6"],
+        "en": ["yellow room", "alt6"],
+        "de": ["das geble zimmer", "alt6"]},
     "11.jpg": {
-        "it": ["Camera doppia fresca e luminosa", "alt11"],
-        "en": ["Double room fresh and bright", "alt11"],
-        "de": ["Doppelzimmer frisch und hell", "alt11"]},
+        "it": ["camera rossa", "alt7"],
+        "en": ["red room", "alt7"],
+        "de": ["das rote zimmer", "alt7"]},
     "12.jpg": {
-        "it": ["Camera doppia,parquet, fiori e luce", "alt12"],
-        "en": ["Double room, parquet , flowers and light", "alt12"],
-        "de": ["Doppelzimmer, Holzparkett, Blumen und Licht", "alt12"]},
+        "it": ["camera rossa", "alt7"],
+        "en": ["red room", "alt7"],
+        "de": ["das rote zimmer", "alt7"]},
     "13.jpg": {
-        "it": ["Salotto con colori... o camera da letto", "alt13"],
-        "en": ["Living room with colors... or bedroom", "alt13"],
-        "de": ["Wohnzimmer mit Farben ... oder auch Schlafzimmer", "alt13"]},
+        "it": ["camera rossa", "alt7"],
+        "en": ["red room", "alt7"],
+        "de": ["das rote zimmer", "alt7"]},
     "14.jpg": {
-        "it": ["Ci piace camminare sul legno", "alt14"],
-        "en": ["We like to walk on the wood", "alt14"],
-        "de": ["Es gefaellt uns auf dem Holz zu schweben", "alt14"]},
+        "it": ["camera rossa", "alt7"],
+        "en": ["red room", "alt7"],
+        "de": ["das rote zimmer", "alt7"]},
     "15.jpg": {
-        "it": ["Fresca luce, calore e colori", "alt15"],
-        "en": ["Fresh light, colored and warm", "alt15"],
-        "de": ["Frisches Licht, Warme athmosphere und Farben", "alt15"]}
+        "it": ["cucina", "alt8"],
+        "en": ["kitchen", "alt8"],
+        "de": ["die kuche", "alt8"]},
+    "16.jpg": {
+        "it": ["cucina", "alt8"],
+        "en": ["kitchen", "alt8"],
+        "de": ["die kuche", "alt8"]},
+    "17.jpg": {
+        "it": ["cucina", "alt8"],
+        "en": ["kitchen", "alt8"],
+        "de": ["die kuche", "alt8"]},
+    "18.jpg": {
+        "it": ["bagno", "alt9"],
+        "en": ["bathroom", "alt9"],
+        "de": ["das bad", "alt9"]},
+    "19.jpg": {
+        "it": ["bagno", "alt9"],
+        "en": ["bathroom", "alt9"],
+        "de": ["das bad", "alt9"]},
+    "20.jpg": {
+        "it": ["bagno", "alt9"],
+        "en": ["bathroom", "alt9"],
+        "de": ["das bad", "alt9"]},
+    "21.jpg": {
+        "it": ["ingresso con corridoio esterno", "alt10"],
+        "en": ["entrance with exterior corridor", "alt10"],
+        "de": ["eingang mit aubenkorridor", "alt10"]},
+    "22.jpg": {
+        "it": ["ingresso principale", "alt11"],
+        "en": ["main entrance", "alt11"],
+        "de": ["haupteingang", "alt11"]}
 }
 
 html_code = '<img src="/images/slider/{}" title="{}/{} - {}" alt="{}">'
