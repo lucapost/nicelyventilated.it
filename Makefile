@@ -9,9 +9,9 @@ github:
 	git commit -am fix
 	git push
 
-vultr:
+upload:
 	make
-	rsync -avr -e ssh ./dst/* vultr:www/nicelyventilated.it/
+	rsync -avr -e ssh ./dst/* vultr2:www/nicelyventilated.it/
 
 clean:
 	find . -type f -name "*.html" -exec rm -f {} \;
